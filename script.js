@@ -1,18 +1,32 @@
-function solicitarDatos() {
-  nro1 = prompt("Ingresar el primer numero");
-  nro2 = prompt("Ingrese el segundo numero");
+function solicitarProducto() {
+  producto = prompt("Ingrese el nombre del producto");
 }
 
-function suma() {
-  let suma = nro1 + nro2;
-  return suma;
+let opcion;
+let stock = [];
+let producto;
+
+opcion = parseInt(
+  prompt(
+    "Para ingresar un producto ingrese 1, para ver stock ingrese 2, Para salir ingrese 0"
+  )
+);
+console.log(opcion);
+while (opcion !== 0) {
+  switch (opcion) {
+    case 1:
+      stock.push(solicitarProducto());
+      break;
+    case 2:
+      console.log(stock);
+      break;
+    default:
+      alert("Opcion incorrecta");
+      break;
+  }
+  opcion = parseInt(
+    prompt(
+      "Para ingresar un producto ingrese 1, para ver stock ingrese 2, Para salir ingrese 0"
+    )
+  );
 }
-
-let nro1;
-let nro2;
-
-solicitarDatos();
-
-console.log(nro1);
-console.log(nro2);
-console.log("resultado:" + suma());

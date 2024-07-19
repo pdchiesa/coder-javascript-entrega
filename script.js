@@ -15,7 +15,7 @@ function imprimirResultados() {
 /** funcion que solicita el producto */
 function leerProducto() {
   opcion = parseInt(
-    prompt("1 - Ingresar un producto\n2 - Ver stock\n0 - Salir")
+    prompt("1 - Ingresar un producto\n2 - Ver productos\n0 - Salir")
   );
 }
 

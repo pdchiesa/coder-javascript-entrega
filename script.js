@@ -1,32 +1,39 @@
+/** funcion que solicita el producto */
 function solicitarProducto() {
-  producto = prompt("Ingrese el nombre del producto");
+  return (producto = prompt("Ingrese el nombre del producto"));
 }
 
-let opcion;
-let stock = [];
-let producto;
+/** funcion que carga producto al arreglo */
+const cargarProductos = (producto) => stock.push(producto);
 
-opcion = parseInt(
-  prompt(
-    "Para ingresar un producto ingrese 1, para ver stock ingrese 2, Para salir ingrese 0"
-  )
-);
-console.log(opcion);
+/** funcion que muestra los resultados, en un alert la cantidad de productos y por consola el listado completo */
+function imprimirResultados() {
+  alert("Se cargaron " + stock.length + " productos");
+  console.log(stock);
+}
+
+/** funcion que solicita el producto */
+function leerProducto() {
+  opcion = parseInt(
+    prompt("1 - Ingresar un producto\n2 - Ver stock\n0 - Salir")
+  );
+}
+
+let opcion = "";
+let stock = [];
+
+leerProducto();
 while (opcion !== 0) {
   switch (opcion) {
     case 1:
-      stock.push(solicitarProducto());
+      cargarProductos(solicitarProducto());
       break;
     case 2:
-      console.log(stock);
+      imprimirResultados();
       break;
     default:
       alert("Opcion incorrecta");
       break;
   }
-  opcion = parseInt(
-    prompt(
-      "Para ingresar un producto ingrese 1, para ver stock ingrese 2, Para salir ingrese 0"
-    )
-  );
+  leerProducto();
 }
